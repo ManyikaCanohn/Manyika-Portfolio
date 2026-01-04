@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaHouseDamage, FaUserGraduate, FaTools, FaProjectDiagram, FaEnvelopeOpenText, FaDesktop,FaPhoneSquare } from "react-icons/fa";
+import { FaHouseDamage, FaUserGraduate, FaTools, FaProjectDiagram, FaEnvelopeOpenText, FaDesktop,FaPhoneSquare, FaScrewdriver } from "react-icons/fa";
 
 
 const Navbar = () => {
@@ -44,6 +44,12 @@ const Navbar = () => {
                                     <strong className='text-white'> PROJECTS </strong>
                                 </a>
                             </li>
+
+                            <li className="nav-item">
+                                <a id='navbar-links' className='nav-link' href="#myservices">
+                                    <strong className='text-white'> SERVICES </strong>
+                                </a>
+                            </li>
                             <li className="nav-item">
                                 <a id='navbar-links' className='nav-link' href="#contact">
                                     <strong className='text-white'> CONTACT </strong>
@@ -55,7 +61,7 @@ const Navbar = () => {
             </nav>
 
             {/* MOBILE BOTTOM NAV */}
-            <div className="mobile-bottom-nav d-md-none">
+            <div className="mobile-bottom-nav d-md-none text-uppercase">
                 <a href="#home" className="mobile-nav-item">
                     <FaHouseDamage className="mobile-icon" />
                     <span>Home</span>
@@ -76,10 +82,9 @@ const Navbar = () => {
                     <span>Projects</span>
                 </a>
 
-
-                <a href="#contact" className="mobile-nav-item">
-                    <FaEnvelopeOpenText className="mobile-icon" />
-                    <span>Contact</span>
+                <a href="#myservices" className="mobile-nav-item">
+                    <FaTools className="mobile-icon" />
+                    <span>Services</span>
                 </a>
             </div>
         </section>

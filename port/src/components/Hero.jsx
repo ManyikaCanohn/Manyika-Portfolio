@@ -13,7 +13,9 @@ import {
   Layers,
   Download, 
 //   Github,
-  PenTool
+  PenTool,
+  Mail,
+  Phone
 } from "lucide-react";
 import { motion } from "framer-motion";
 import {
@@ -101,22 +103,33 @@ const Hero = () => {
                         <p data-aos="zoom-in">
                         My name is Manyika Munyinda, an IT professional and developer with
                         hands-on experience in building web-based and digital platforms.
-                        I have worked on educational systems such as CodeBolt,
-                        where I developed interactive learning experiences for developers,
-                        and business systems like Planora, a productivity
-                        platform that helps users manage tasks and time efficiently.
+                        I have worked on projects such as educational systems. business systems 
+                        and portfolio application.
                         </p>
-
                         <p data-aos="zoom-in">
-                        These projects have strengthened my ability to solve real-world problems,
-                        design structured systems, and think critically about user needs and
-                        digital workflows.
+                            These projects have strengthened my ability to solve real-world problems,
+                            design structured systems, and think critically about user needs and
+                            digital workflows.
                         </p>
 
                         <p data-aos="zoom-in">
                         Outside of development, I am also skilled in graphic design, where I
                         transform ideas into visual content that communicates clearly and effectively.
                         </p>
+
+                    </div>
+
+                    <div className="flex items-center gap-3 mt-5">
+
+                        <a href="tel:+260774283579" className="flex items-center text-white gap-2 bg-[#06053d]/90 px-3 py-1 rounded">
+                            <Phone size={20} />
+                            <span>Call</span>
+                        </a>
+
+                        <a href="mailto:manyikamunyinda4@gmail.com" className="flex items-center gap-2 border-2 -[#06053d]/90 text-[#06053d]/90 px-3 py-1 rounded">
+                            <Mail size={20} />
+                            <span>Email</span>
+                        </a>
 
                     </div>
 
@@ -135,13 +148,13 @@ const Hero = () => {
                 </div>
 
                 {/* RIGHT ORBIT */}
-                <div className="lg:flex justify-center items-center hidden lg:w-5/12">
+                <div className="lg:flex justify-center tech-blue items-center hidden lg:w-5/12">
 
                     <div className="relative w-[420px] h-[420px]">
 
                         {/* OUTER ORBIT */}
                         <motion.div
-                        className="absolute inset-0 rounded-full border border-gray-300/20"
+                        className="absolute inset-0 rounded-full border border-gray-700/20"
                         {...orbit(30)}
                         >
                             <IconNode icon={FaReact} angle={0} radius={190} />
@@ -153,7 +166,7 @@ const Hero = () => {
 
                         {/* MIDDLE ORBIT */}
                         <motion.div
-                        className="absolute inset-10 rounded-full border border-gray-300/15"
+                        className="absolute inset-10 rounded-full border border-gray-700/15"
                         {...orbit(22)}
                         >
                             <IconNode icon={FaJs} angle={0} radius={140} />
@@ -164,7 +177,7 @@ const Hero = () => {
 
                         {/* INNER ORBIT */}
                         <motion.div
-                        className="absolute inset-24 rounded-full border border-gray-300/10"
+                        className="absolute inset-24 rounded-full border border-gray-700/10"
                         {...orbit(18)}
                         >
                             <IconNode icon={Code2} angle={0} radius={85} />

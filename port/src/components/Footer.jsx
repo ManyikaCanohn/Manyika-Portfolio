@@ -13,7 +13,9 @@ import {
   FaGithub,
   FaLinkedin,
   FaTwitter,
+  FaWhatsapp,
 } from "react-icons/fa";
+import { CodeXmlIcon } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -27,31 +29,32 @@ const Footer = () => {
             <span className="text-blue-400">.dev</span>
           </h3>
 
-          <p className="text-sm leading-relaxed text-gray-400 text-justify">
-            A Software developer focused on building scalable digital experiences,
+          <p className="text-sm leading-relaxed text-gray-400 text-justify ">
+            I am a software developer focused on building scalable digital experiences,
             modern web applications, and impactful user-centered solutions.
           </p>
 
-          <div className="mt-5 space-y-1 text-sm">
+          <div className="mt-5 space-y-1 text-sm font-mono">
 
             <p>
               Status:
               <span className="text-green-400 ml-1">
-                Available for Work
+                Available for Work.
               </span>
             </p>
 
             <p>
               Location:
               <span className="ml-1">
-                Lusaka, Zambia
+                Lusaka, Zambia.
               </span>
             </p>
 
             <p>
+
               Engineer:
               <span className="ml-1">
-                Manyika Munyinda
+                Manyika Munyinda. 
               </span>
             </p>
 
@@ -66,7 +69,7 @@ const Footer = () => {
             Experience
           </h3>
 
-          <div className="space-y-3">
+          <div className="space-y-3 font-mono">
 
             <div className="flex items-center gap-2 hover:text-white transition">
               <FiBriefcase className="text-blue-400" />
@@ -88,6 +91,11 @@ const Footer = () => {
               <span>Backend Development</span>
             </div>
 
+            <div className="flex items-center gap-2 hover:text-white transition">
+              <CodeXmlIcon className="text-blue-400" />
+              <span>Full Stack Software Developer</span>
+            </div>
+
           </div>
 
         </div>
@@ -96,11 +104,10 @@ const Footer = () => {
         <div>
 
         <h3 className="font-orbitron text-blue-400 mb-4 flex items-center gap-2">
-          <FiUsers />
           References
         </h3>
 
-          <div className="space-y-5 text-sm">
+          <div className="space-y-5 text-sm font-mono">
 
             <div className="flex items-start gap-3">
 
@@ -167,7 +174,7 @@ const Footer = () => {
             Connect
           </h3>
 
-          <div className="space-y-3">
+          <div className="space-y-3 font-mono">
 
             <a
               href="mailto:manyikamunyinda4@gmail.com"
@@ -175,6 +182,14 @@ const Footer = () => {
             >
               <FiMail className="text-blue-400" />
               <span>Email</span>
+            </a>
+
+            <a
+              href="mailto:manyikamunyinda4@gmail.com"
+              className="flex items-center gap-2 hover:text-white transition"
+            >
+              <FaWhatsapp className="text-blue-400" />
+              <span>WhatsApp</span>
             </a>
 
             <a
@@ -214,7 +229,7 @@ const Footer = () => {
       </div>
 
       {/* BOTTOM */}
-      <div className="border-t border-white/10 mt-10 pt-6 text-center text-sm text-gray-500">
+      <div className="border-t border-white/10 mt-10 pt-3 text-center text-sm text-gray-500 font-mono">
         © {new Date().getFullYear()} Manyika Munyinda. All rights reserved.
       </div>
     </footer>

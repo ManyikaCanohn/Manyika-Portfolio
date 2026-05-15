@@ -18,7 +18,7 @@ const Skills = () => {
     description:
       "A web-based learning platform designed to support programming education and structured course delivery.",
     status: null,
-    link: "https://reactoacademy.onrener.com",
+    link: "https://reacto-academy.onrender.com/",
   },
   {
     title: "Planora – Productivity & Event System",
@@ -125,7 +125,7 @@ const Skills = () => {
   <div className="flex gap-4 space-y-5 text-gray-600 text-sm md:text-base ">
 
 {/* HEADER */}
-    <div className="flex justify-center flex-col gap-3 mb-6">
+    <div className="flex justify-center flex-col">
 
       <h3 className="text-lg md:text-xl font-semibold font-orbitron text-[#06053d]">
         Graphic Design Skills

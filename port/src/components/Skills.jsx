@@ -32,7 +32,7 @@ const Skills = () => {
     description:
       "A personal web application showcasing my skills, projects, and experience in a structured professional format.",
     status: null,
-    link: "https://manyika-portfolio.onrender.com",
+    link: "https://manyika-dev.onrender.com",
   },
   ];
 

@@ -125,7 +125,7 @@ const Hero = () => {
                         <h1
                             data-aos="fade-up"
                             className="
-                                text-2xl
+                                text-xl
                                 md:text-5xl
                                 font-bold
                                 font-orbitron

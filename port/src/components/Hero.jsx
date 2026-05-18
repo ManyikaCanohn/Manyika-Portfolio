@@ -2,7 +2,7 @@ import React from 'react'
 import { TypeAnimation } from "react-type-animation";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import {
   Code2,
   FileCode,
@@ -12,23 +12,70 @@ import {
   Brush,
   Layers,
   Download, 
-//   Github,
   PenTool,
   Mail,
-  Phone
+  Phone,  
+  X,
 } from "lucide-react";
 import { motion } from "framer-motion";
+
 import {
   FaReact,
   FaNodeJs,
   FaCss3Alt,
   FaHtml5,
   FaJs,
-  FaGitAlt
+  FaGitAlt, FaWhatsapp,
+  FaLinkedin,
+  FaInstagram,
+  FaFacebook,
 } from "react-icons/fa";
 
 
+
 const Hero = () => {
+
+    const [open, setOpen] = useState(false);
+    const [cvPopup, setCvPopup] = useState(false);
+
+    const socials = [
+        {
+        name: "Call",
+        icon: <Phone size={20} />,
+        link: "tel:+260774283579",
+        color: "from-cyan-400 to-blue-500",
+        },
+        {
+        name: "Email",
+        icon: <Mail size={20} />,
+        link: "mailto:manyikamunyinda4@gmail.com",
+        color: "from-purple-400 to-pink-500",
+        },
+        {
+        name: "WhatsApp",
+        icon: <FaWhatsapp size={22} />,
+        link: "https://wa.me/260774283579",
+        color: "from-green-400 to-emerald-600",
+        },
+        {
+        name: "LinkedIn",
+        icon: <FaLinkedin size={22} />,
+        link: "https://linkedin.com/munyinda-manyika",
+        color: "from-blue-400 to-cyan-500",
+        },
+        {
+        name: "Instagram",
+        icon: <FaInstagram size={22} />,
+        link: "https://instagram.com/manyika_canohn",
+        color: "from-pink-500 to-orange-400",
+        },
+        {
+        name: "Facebook",
+        icon: <FaFacebook size={22} />,
+        link: "https://facebook.com/manyika_canohn",
+        color: "from-blue-500 to-blue-300",
+        },
+    ];
 
     const orbit = (duration = 25) => ({
         animate: { rotate: 360 },
@@ -75,9 +122,31 @@ const Hero = () => {
 
                     {/* NAME + TITLE */}
                     <div>
-                        <h1 data-aos="fade-up" className="text-3xl font-orbitron md:text-3xl font-bold tech-blue tracking-wide">
-                            HI, I'M MANYIKA MUNYINDA.
-                        </h1>
+                        <h1
+                            data-aos="fade-up"
+                            className="
+                                text-2xl
+                                md:text-5xl
+                                font-bold
+                                font-orbitron
+                                tracking-[0.12em]
+                                tech-blue
+                                flex
+                                flex-wrap
+                                justify-center md:justify-start
+                            ">
+                            {"MANYIKA MUNYINDA.".split("").map((char, index) => (
+                                <span
+                                key={index}
+                                className="heroLetter"
+                                style={{
+                                    animationDelay: `${index * 0.08}s`,
+                                }}
+                                >
+                                {char === " " ? "\u00A0" : char}
+                                </span>
+                            ))}
+                            </h1>
 
                         <code
                             data-aos="slide-right"
@@ -88,7 +157,7 @@ const Hero = () => {
                             "Engineering Scalable Web Systems.", 3000,
                             "Building Real-World Digital Products.", 3000,
                             "Crafting Education and Business Platforms.", 3000,
-                            "Transforming Ideas into Functional Software.", 3000,
+                            "Transforming Ideas into Software.", 3000,
                             ]}
                             wrapper="span"
                             speed={50}
@@ -101,10 +170,10 @@ const Hero = () => {
                     <div className="mt-4 space-y-4 text-gray-700 text-base md:text-lg leading-relaxed text-justify">
 
                         <p data-aos="zoom-in">
-                        My name is Manyika Munyinda, an IT professional and developer with
-                        hands-on experience in building web-based and digital platforms.
-                        I have worked on projects such as educational systems. business systems 
-                        and portfolio application.
+                            My name is Manyika Munyinda, an IT professional and developer with
+                            hands-on experience in building web-based and digital platforms.
+                            I have worked on projects such as educational systems. business systems 
+                            and portfolio application.
                         </p>
                         <p data-aos="zoom-in">
                             These projects have strengthened my ability to solve real-world problems,
@@ -113,37 +182,281 @@ const Hero = () => {
                         </p>
 
                         <p data-aos="zoom-in">
-                        Outside of development, I am also skilled in graphic design, where I
-                        transform ideas into visual content that communicates clearly and effectively.
+                            Outside of development, I am also skilled in graphic design, where I
+                            transform ideas into visual content that communicates clearly and effectively.
                         </p>
 
                     </div>
 
-                    <div className="flex items-center gap-3 mt-5">
+                     {/* BUTTONS */}
+                    <div className="flex flex-wrap items-center gap-4 mt-8">
 
-                        <a href="tel:+260774283579" className="flex items-center text-white gap-2 bg-[#06053d]/90 px-3 py-1 rounded">
-                            <Phone size={20} />
-                            <span>Call</span>
-                        </a>
+                        {/* LET'S TALK */}
+                        <button
+                            onClick={() => setOpen(true)}
+                        className="
+                            relative
+                            overflow-hidden
+                            group
+                            px-6 py-3
+                            rounded-2xl
+                            bg-[#06053d]
+                            text-white
+                            font-medium
+                            flex items-center gap-3
+                            border border-cyan-400/20
+                            transition-all duration-300
+                            hover:scale-105
+                            hover:-translate-y-1
+                        "
+                        >
 
-                        <a href="mailto:manyikamunyinda4@gmail.com" className="flex items-center gap-2 border-2 -[#06053d]/90 text-[#06053d]/90 px-3 py-1 rounded">
-                            <Mail size={20} />
-                            <span>Email</span>
-                        </a>
+                        {/* GLOW */}
+                        <div className="
+                            absolute inset-0
+                            opacity-0 group-hover:opacity-100
+                            transition duration-500
+                            bg-gradient-to-r from-cyan-500/20 to-purple-500/20
+                        " />
+
+                        <Phone
+                            size={18}
+                            className="relative z-10 animate-pulse"
+                        />
+
+                        <span className="relative z-10">
+                            Let's Talk
+                        </span>
+                        </button>
+
+                        {/* DOWNLOAD CV */}
+                        <button
+                        onClick={() => setCvPopup(true)}
+                        className="
+                            relative
+                            overflow-hidden
+                            group
+                            px-6 py-3
+                            rounded-2xl
+                            border
+                            border-[#06053d]
+                            bg-white/5
+                            backdrop-blur-xl
+                            text-[#06053d]
+                            font-medium hover:text-white
+                            flex items-center gap-3
+                            transition-all duration-300
+                            hover:scale-105
+                            hover:-translate-y-1
+                            hover:border-cyan-500
+                        "
+                        >
+
+                        {/* GLOW */}
+                        <div className="
+                            absolute inset-0
+                            opacity-0 group-hover:opacity-100
+                            transition duration-500
+                            bg-gradient-to-r from-cyan-500 to-[#06053d]
+                        " />
+
+                        <Download
+                            size={18}
+                            className="relative z-10 animate-bounce"
+                        />
+
+                        <span className="relative z-10">
+                            Download CV
+                        </span>
+                        </button>
 
                     </div>
 
-                    {/* TOOLS */}
-                    <div data-aos="fade-up" className="mt-7 flex flex-wrap gap-11 text-sm text-gray-600">
+                    {/* MODAL */}
+                    {open && (
+                        <div
+                        className="
+                            fixed inset-0 z-[99999]
+                            flex items-center justify-center
+                            bg-black/60
+                            backdrop-blur-md
+                            px-5
+                        "
+                        >
 
-                        <span className="flex items-center gap-2"><Code2 size={18}/> </span>
-                        <span className="flex items-center gap-2"><FileCode size={18}/> </span>
-                        <span className="flex items-center gap-2"><Server size={18}/> </span>
-                        <span className="flex items-center gap-2"><Database size={18}/> </span>
-                        <span className="flex items-center gap-2"><Layers size={18}/> </span>
-                        <span className="flex items-center gap-2"><PenTool size={18}/></span>
+                        {/* MODAL CARD */}
+                        <div
+                            className="
+                            relative
+                            w-full
+                            max-w-md
+                            rounded-[2rem]
+                            border border-white/10
+                            bg-[#0b1023]/90
+                            backdrop-blur-2xl
+                            p-8
+                            overflow-hidden
+                            animate-modalPop
+                            ">
 
-                    </div>
+                            {/* BACKGROUND GLOW */}
+                            <div className="absolute top-0 left-0 w-40 h-40 bg-cyan-500/20 blur-[100px]" />
+
+                                <div className="absolute bottom-0 right-0 w-40 h-40 bg-purple-500/20 blur-[100px]" />
+
+                                {/* CLOSE */}
+                                <button
+                                    onClick={() => setOpen(false)}
+                                    className="
+                                        absolute top-5 right-5
+                                        text-gray-400
+                                        hover:text-white
+                                        transition
+                                    ">
+                                    <X size={22} />
+                                </button>
+
+                                {/* TITLE */}
+                                <div className="relative z-10 mb-8">
+                                    <p className="text-cyan-400 mb-3">
+                                        On all socials
+                                    </p>
+
+                                    <h2 className="text-xl md:text-3xl font-bold text-white font-orbitron tracking-wide">
+                                        Let’s Connect...
+                                    </h2>
+                                </div>
+
+                                {/* OPTIONS */}
+                                <div className="grid grid-cols-2 gap-4 relative z-10">
+                                    {socials.map((item, index) => (
+                                        <a
+                                        key={index}
+                                        href={item.link}
+                                        target="_blank"
+                                        className="
+                                            group
+                                            relative
+                                            overflow-hidden
+                                            rounded-2xl
+                                            border border-white/10
+                                            bg-white/5
+                                            backdrop-blur-xl
+                                            p-5
+                                            flex flex-col items-center justify-center
+                                            gap-3
+                                            text-white
+                                            transition-all duration-300
+                                            hover:scale-105
+                                            hover:-translate-y-1
+                                        "
+                                        >
+
+                                        {/* HOVER GRADIENT */}
+                                        <div className={`
+                                            absolute inset-0
+                                            opacity-0 group-hover:opacity-100
+                                            transition duration-500
+                                            bg-gradient-to-br ${item.color}
+                                        `} />
+
+                                        <div className="relative z-10 text-2xl">
+                                            {item.icon}
+                                        </div>
+
+                                        <span className="relative z-10 text-sm font-medium">
+                                            {item.name}
+                                        </span>
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* CV POPUP */}
+                    {cvPopup && (
+                        <div
+                            className="
+                            fixed inset-0 z-[99999]
+                            flex items-center justify-center
+                            bg-black/60
+                            backdrop-blur-md
+                            px-5
+                            "
+                        >
+
+                            {/* CARD */}
+                            <div
+                            className="
+                                relative
+                                w-full
+                                max-w-md
+                                rounded-[2rem]
+                                border border-white/10
+                                bg-[#0b1023]/90
+                                backdrop-blur-2xl
+                                p-8
+                                overflow-hidden
+                                animate-modalPop
+                            "
+                            >
+
+                            {/* GLOW */}
+                            <div className="absolute top-0 left-0 w-40 h-40 bg-cyan-500/20 blur-[100px]" />
+
+                            <div className="absolute bottom-0 right-0 w-40 h-40 bg-purple-500/20 blur-[100px]" />
+
+                            {/* CLOSE */}
+                            <button
+                                onClick={() => setCvPopup(false)}
+                                className="
+                                absolute top-5 right-5
+                                text-gray-400
+                                hover:text-white
+                                transition
+                                "
+                            >
+                                <X size={22} />
+                            </button>
+
+                            {/* CONTENT */}
+                            <div className="relative z-10">
+
+                                <div className="
+                                w-16 h-16
+                                rounded-2xl
+                                bg-gradient-to-br
+                                from-cyan-400 to-purple-500
+                                flex items-center justify-center
+                                mb-6
+                                ">
+                                <Download size={28} className="text-white animate-bounce" />
+                                </div>
+
+                                <p className="
+                                    text-cyan-400
+                                    tracking-wide font-orbitron
+                                    text-xs
+                                    mb-3">
+                                    CV Download
+                                </p>
+
+                                <h2 className="text-3xl font-bold text-white mb-3">
+                                    PDF CV Not Available
+                                </h2>
+
+                                <p className="text-gray-300 leading-relaxed text-justify">
+                                    A downloadable PDF version of my CV is currently unavailable.
+                                    Please use my portfolio website as your reference for skills,
+                                    experience, projects, and contact information. Thank you!
+                                </p>
+
+
+                            </div>
+                            </div>
+                        </div>
+                    )}
 
                 </div>
 

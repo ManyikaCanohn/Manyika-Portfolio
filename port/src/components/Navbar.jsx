@@ -18,6 +18,40 @@ import {
 } from "react-icons/fa";
 
 const Navbar = () => {
+
+  const techs = [
+    {
+      icon: <FaReact />,
+      title: "React",
+      className: "reactIcon",
+    },
+    {
+      icon: <FaNodeJs />,
+      title: "Node.js",
+      className: "nodeIcon",
+    },
+    {
+      icon: <FaJs />,
+      title: "JavaScript",
+      className: "jsIcon",
+    },
+    {
+      icon: <FaHtml5 />,
+      title: "HTML5",
+      className: "htmlIcon",
+    },
+    {
+      icon: <FaCss3Alt />,
+      title: "CSS3",
+      className: "cssIcon",
+    },
+    {
+      icon: <FaDatabase />,
+      title: "Database",
+      className: "dbIcon",
+    },
+  ];
+
   return (
     <>
       {/* TOP NAVBAR */}
@@ -28,48 +62,72 @@ const Navbar = () => {
           {/* BRAND */}
           <div>
             <h2 className="font-orbitron text-white text-3xl tracking-wide">
-              Manyika<span className="text-blue-400">.dev</span>
+              Manyika<span className="text-cyan-400">.dev</span>
             </h2>
           </div>
 
           {/* TECH STACK */}
-          <ul className="flex items-center gap-6 text-blue-400 text-lg">
+          <ul
+      className="
+        flex items-center
+        gap-2 md:gap-4
+        px-4 py-3
+        rounded-full
+        border border-white/10
+        bg-white/5
+        backdrop-blur-xl
+        shadow-[0_8px_30px_rgba(0,0,0,0.3)]
+      "
+    >
+      {techs.map((tech, index) => (
+        <div
+          key={index}
+          className="flex items-center"
+        >
 
-            <li title="React">
-              <FaReact size={25} className=" transition" />
-            </li>
+          <li
+            title={tech.title}
+            className={`
+              ${tech.className}
+              group
+              relative
+              list-none
+              text-cyan-400
+              text-xl md:text-2xl
+              cursor-pointer
+              transition-all
+              duration-300
+              hover:text-white
+              hover:scale-125
+            `}
+          >
 
-            <div className="w-px h-8 bg-white/30 mx-2" />
+            {/* GLOW */}
+            <div
+              className="
+                absolute
+                inset-0
+                blur-2xl
+                opacity-0
+                group-hover:opacity-100
+                transition
+                duration-500
+                bg-cyan-400/30
+              "
+            />
 
-            <li title="Node.js">
-              <FaNodeJs size={25} className=" transition" />
-            </li>
+            <div className="relative z-10">
+              {tech.icon}
+            </div>
 
-            <div className="w-px h-8 bg-white/30 mx-2" />
+          </li>
 
-            <li title="JavaScript">
-              <FaJs size={25} className=" transition" />
-            </li>
-
-            <div className="w-px h-8 bg-white/30 mx-2" />
-
-            <li title="HTML5">
-              <FaHtml5 size={25} className=" transition" />
-            </li>
-
-            <div className="w-px h-8 bg-white/30 mx-2" />
-
-            <li title="CSS3">
-              <FaCss3Alt size={25} className=" transition" />
-            </li>
-
-            <div className="w-px h-8 bg-white/30 mx-2" />
-
-            <li title="Database">
-              <FaDatabase size={25} className=" transition" />
-            </li>
-
-          </ul>
+          {index !== techs.length - 1 && (
+            <div className="w-px h-8 bg-white/10 mx-3 hidden sm:block" />
+          )}
+        </div>
+      ))}
+    </ul>
 
         </nav>
 
@@ -79,33 +137,99 @@ const Navbar = () => {
       <div  className="md:hidden fixed top-0 left-0 right-0 z-[99999]
              bg-[#06053d]/95 backdrop-blur-lg
              border-t border-white/10
-             px-5 py-3 shadow-2xl">
+             px-5 shadow-2xl">
         <div className="flex items-center justify-between">
 
           <h2 className="font-orbitron text-white text-sm tracking-wide">
-            Manyika<span className="text-blue-400">.dev</span>
+            Manyika<span className="text-cyan-400">.dev</span>
           </h2>
 
-          <div className="flex items-center gap-6">
+          <div
+            className="
+              flex items-center gap-3
+              px-3 py-2
+              rounded-full
+            "
+          >
 
+            {/* CALL */}
             <a
               href="tel:+260774283579"
-              className="flex flex-col items-center gap-1 text-white text-[11px]"
+              className="
+                mobileActionBtn
+                group
+                relative
+                overflow-hidden
+                w-11 h-11
+                rounded-full
+                flex items-center justify-center
+                border border-cyan-400/20
+                bg-cyan-400/10
+                text-cyan-300
+                transition-all duration-300
+                hover:scale-110
+                hover:bg-cyan-400
+                hover:text-blue-900
+                active:scale-95
+              "
             >
-              <Phone size={20} />
-              {/* <span>Call</span> */}
+
+              {/* GLOW */}
+              <div className="
+                absolute inset-0
+                opacity-0 group-hover:opacity-100
+                transition duration-500
+                bg-cyan-400/20 blur-xl
+              " />
+
+              <Phone
+                size={18}
+                className="relative z-10"
+              />
+
             </a>
 
+              {/* DIVIDER */}
+              <div className="w-px h-6 bg-white/10" />
+
+            {/* EMAIL */}
             <a
               href="mailto:manyikamunyinda4@gmail.com"
-              className="flex flex-col items-center gap-1 text-white text-[11px]"
+              className="
+                mobileActionBtn2
+                group
+                relative
+                overflow-hidden
+                w-11 h-11
+                rounded-full
+                flex items-center justify-center
+                border border-purple-400/20
+                bg-purple-400/10
+                text-purple-300
+                transition-all duration-300
+                hover:scale-110
+                hover:bg-purple-400
+                hover:text-blue-900
+                active:scale-95
+              "
             >
-              <Mail size={20} />
-              {/* <span>Email</span> */}
+
+              {/* GLOW */}
+              <div className="
+                absolute inset-0
+                opacity-0 group-hover:opacity-100
+                transition duration-500
+                bg-purple-400/20 blur-xl
+              " />
+
+              <Mail
+                size={18}
+                className="relative z-10"
+              />
+
             </a>
 
           </div>
-
         </div>
       </div>
     </>

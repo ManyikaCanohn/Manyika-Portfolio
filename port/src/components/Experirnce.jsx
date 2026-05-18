@@ -6,7 +6,7 @@ import { FiBriefcase, FiCalendar, FiMapPin } from "react-icons/fi";
 const Experience = () => {
   const experience = [
     {
-      role: "Information Technology Officer",
+      role: "Information Technology Officer Intern.",
       period: "05/01/26 – 10/04/26",
       company: "Waleleka School",
       points: [
@@ -18,7 +18,7 @@ const Experience = () => {
     },
 
     {
-      role: "Publicity Secretary",
+      role: "Publicity Secretary.",
       period: "27/04/23 – Present",
       company: "New Apostolic Church – Chelstone Green Congregation",
       points: [
@@ -30,7 +30,7 @@ const Experience = () => {
     },
 
     {
-      role: "Creative & Production Lead",
+      role: "Creative & Production Lead.",
       period: "10/01/26 – Present",
       company: "Selterio Music Ensemble",
       points: [
@@ -43,115 +43,381 @@ const Experience = () => {
   ];
 
   return (
-  <section className="mb-24 px-4 md:px-10" id="experience">
+    <section
+      id="experience"
+      className="
+        relative
+        py-24
+        px-4 md:px-10 lg:px-20
+        overflow-hidden
+      "
+    >
 
-    <div className="grid lg:grid-cols-12 gap-10">
+      {/* BACKGROUND */}
+      <div className="absolute inset-0">
 
-      {/* LEFT LABEL */}
-      <div className="lg:col-span-3 flex lg:flex-col items-center lg:items-start gap-4">
+        {/* GLOW */}
+        <div className="
+          absolute
+          top-0 left-0
+          w-[500px] h-[500px]
+          bg-cyan-500/10
+          blur-[140px]
+          rounded-full
+        " />
 
-        <div className="p-3 rounded-2xl bg-blue-50 border border-blue-100 shadow-sm">
-          <FiBriefcase className="text-[#06053d]" size={24} />
-        </div>
+        <div className="
+          absolute
+          bottom-0 right-0
+          w-[500px] h-[500px]
+          bg-purple-500/10
+          blur-[140px]
+          rounded-full
+        " />
 
-        <div>
-          <h1 className="font-orbitron text-2xl md:text-3xl tracking-wide text-[#06053d] leading-tight">
-            Professional Experience
-          </h1>
-
-          <p className="text-gray-500 mt-3 text-sm md:text-base leading-relaxed max-w-sm">
-            My career journey highlighting technical expertise, collaborative projects, and measurable impact.
-          </p>
-        </div>
+        {/* GRID */}
+        <div className="
+          movingGrid
+          absolute inset-0 opacity-[0.03]
+          bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)]
+          bg-[size:45px_45px]
+        " />
 
       </div>
 
-      {/* RIGHT CONTENT */}
-      <div className="lg:col-span-9 grid sm:grid-cols-2 gap-6">
+      <div className="relative z-10">
 
-        {experience.map((item, index) => (
-          <div
-            key={index}
-            className="group relative p-6 rounded-2xl border border-gray-100
-                       bg-white/70 backdrop-blur-md shadow-sm
-                       hover:shadow-xl hover:-translate-y-1
-                       transition-all duration-300 overflow-hidden"
-          >
+        {/* HEADER */}
+        <div className="
+          flex flex-col
+          lg:flex-row
+          lg:items-end
+          justify-between
+          gap-8
+          mb-20
+        ">
 
-            {/* HOVER GLOW */}
-            <div
-              className="absolute inset-0 rounded-2xl opacity-0
-                         group-hover:opacity-100 transition duration-500
-                         bg-gradient-to-br from-blue-50 to-transparent
-                         pointer-events-none"
-            />
+          {/* LEFT */}
+          <div className="max-w-3xl">
 
-            <div className="relative z-10">
+            <div className="flex items-center gap-4 mb-2">
 
-              {/* TOP */}
-              <div className="flex items-start justify-between gap-4 mb-5">
+              <div className="
+                heroBriefcase
+                relative
+                w-16 h-16
+                rounded-2xl
+                bg-gradient-to-br
+                from-cyan-400
+                to-blue-600
+                flex items-center justify-center
+                shadow-[0_0_30px_rgba(34,211,238,0.4)]
+              ">
 
-                <div>
+                <FiBriefcase
+                  className="text-white"
+                  size={28}
+                />
 
-                  <div className="flex items-center gap-2">
-                    {/* <FiBriefcase className="text-[#06053d]" /> */}
-
-                    <h3 className="text-lg md:text-xl text-[#06053d]">
-                      {item.role}
-                    </h3>
-                  </div>
-
-                  <p className="text-sm text-gray-600 mt-1 font-medium">
-                    {item.company}
-                  </p>
-
-                </div>
-
-                {/* PERIOD */}
-                <div
-                  className="flex items-center gap-2 px-3 py-1 rounded-full
-                             bg-blue-50 border border-blue-100
-                             text-blue-700 text-xs md:text-sm whitespace-nowrap"
-                >
-                  <FiCalendar className="text-blue-500" />
-                  {item.period}
-                </div>
+                {/* PULSE */}
+                <div className="
+                  absolute inset-0
+                  rounded-2xl
+                  border border-cyan-300/40
+                  animate-ping
+                " />
 
               </div>
 
-              {/* RESPONSIBILITIES */}
-              <div className="space-y-4">
+              <div>
 
-                {item.points.map((point, i) => (
-                  <div
-                    key={i}
-                    className="flex gap-3 items-start"
-                  >
+                <p className="
+                  text-cyan-500
+                  uppercase
+                  tracking-[0.35em]
+                  text-xs
+                  mb-2
+                ">
+                  Experience
+                </p>
 
-                    <div className="mt-1 text-green-500">
-                      <FiCheckCircle className="text-lg" />
-                    </div>
-
-                    <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                      {point}
-                    </p>
-
-                  </div>
-                ))}
+                <h1 className="
+                  font-orbitron
+                  text-3xl md:text-5xl
+                  font-bold
+                  text-[#06053d]
+                  leading-tight
+                ">
+                  Professional Journey
+                </h1>
 
               </div>
 
             </div>
 
+            <p className="
+              text-gray-500 text-justify
+              leading-relaxed
+              text-sm md:text-lg
+              max-w-2xl
+            ">
+              A timeline of technical growth, problem solving,
+              digital innovation, and real-world impact across
+              software development, IT operations and creative design.
+            </p>
+
           </div>
-        ))}
+
+          {/* RIGHT */}
+          <div className="
+            flex items-center gap-4
+            flex-wrap
+          ">
+
+            <div className="
+              px-5 py-3
+              rounded-2xl
+              bg-white/60
+              backdrop-blur-xl
+              border border-white/10
+              shadow-lg
+            ">
+
+              <p className="text-xs text-gray-400 uppercase tracking-[0.2em]">
+                Experience
+              </p>
+
+              <h3 className="text-2xl font-bold text-[#06053d] font-orbitron">
+                2+
+              </h3>
+
+            </div>
+
+            <div className="
+              px-5 py-3
+              rounded-2xl
+              bg-white/60
+              backdrop-blur-xl
+              border border-white/10
+              shadow-lg
+            ">
+
+              <p className="text-xs text-gray-400 uppercase tracking-[0.2em]">
+                Projects
+              </p>
+
+              <h3 className="text-2xl font-bold font-orbitron text-[#06053d]">
+                3+
+              </h3>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* EXPERIENCE STACK */}
+        <div className="space-y-8">
+
+          {experience.map((item, index) => (
+
+            <div
+              key={index}
+              className="
+                experienceCard
+                group
+                relative
+                overflow-hidden
+                rounded-[2rem]
+                border border-white/10
+                bg-white/60
+                backdrop-blur-2xl
+                shadow-[0_10px_40px_rgba(0,0,0,0.08)]
+                transition-all duration-500
+                hover:-translate-y-2
+                hover:shadow-[0_25px_80px_rgba(0,0,0,0.14)]
+              "
+            >
+
+              {/* GLOW */}
+              <div className="
+                absolute inset-0
+                opacity-0 group-hover:opacity-100
+                transition duration-500
+                bg-gradient-to-br
+                from-cyan-500/10
+                to-purple-500/10
+              " />
+
+              {/* SIDE ACCENT */}
+              <div className="
+                experienceAccent
+                absolute left-0 top-0
+                h-full w-2
+                bg-gradient-to-b
+                from-cyan-400
+                via-blue-500
+                to-purple-500
+              " />
+
+              {/* CONTENT */}
+              <div className="
+                relative z-10
+                grid lg:grid-cols-12
+                gap-8
+                p-8
+              ">
+
+                {/* LEFT */}
+                <div className="lg:col-span-4 flex flex-col justify-center">
+
+                  {/* TOP */}
+                  <div className="flex items-center gap-4 mb-5">
+
+                    <div className="
+                      experienceIcon
+                      w-14 h-14
+                      rounded-xl
+                      flex items-center justify-center
+                      text-cyan-500
+                    ">
+                      <FiBriefcase size={24} className="heroBriefcase" />
+                    </div>
+
+                    <div>
+
+                      <h3 className="
+                        text-2xl uppercase
+                        font-semibold
+                        text-[#06053d]
+                        group-hover:text-cyan-600
+                        transition
+                      ">
+                        {item.role}
+                      </h3>
+
+                      <p className="
+                        text-gray-500
+                        font-medium
+                        mt-1
+                      ">
+                        {item.company}
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                  {/* PERIOD */}
+                  <div className="
+                    periodBadge
+                    inline-flex
+                    items-center gap-3
+                    px-5 py-3
+                    rounded-2xl
+                    bg-cyan-50
+                    border border-cyan-100
+                    text-cyan-700
+                    text-sm
+                    shadow-sm
+                  ">
+
+                    <FiCalendar className="text-cyan-500" />
+
+                    {item.period}
+
+                  </div>
+
+                </div>
+
+                {/* RIGHT */}
+                <div className="lg:col-span-8">
+
+                  <div className="
+                    grid md:grid-cols-2
+                    gap-5
+                  ">
+
+                    {item.points.map((point, i) => (
+
+                      <div
+                        key={i}
+                        className="
+                          responsibilityCard
+                          group/item
+                          relative
+                          overflow-hidden
+                          rounded-2xl
+                          border border-white/10
+                          bg-white/40
+                          backdrop-blur-xl
+                          p-5
+                          transition-all duration-300
+                          hover:bg-white/70
+                          hover:-translate-y-1
+                        "
+                      >
+
+                        {/* MINI GLOW */}
+                        <div className="
+                          absolute inset-0
+                          opacity-0 group-hover/item:opacity-100
+                          transition duration-500
+                          bg-gradient-to-br
+                          from-cyan-500/5
+                          to-purple-500/5
+                        " />
+
+                        <div className="
+                          relative z-10
+                          flex gap-4
+                          items-start
+                        ">
+
+                          {/* CHECK */}
+                          <div className="
+                            checkIcon
+                            shrink-0
+                            w-10 h-10
+                            rounded-xl
+                            bg-green-500/10
+                            text-green-500
+                            flex items-center justify-center
+                            mt-1
+                          ">
+                            <FiCheckCircle />
+                          </div>
+
+                          <p className="
+                            text-gray-600
+                            leading-relaxed
+                            text-sm md:text-base
+                          ">
+                            {point}
+                          </p>
+
+                        </div>
+
+                      </div>
+
+                    ))}
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          ))}
+
+        </div>
 
       </div>
 
-    </div>
-
-  </section>
-);
+    </section>
+  );
 };
 
 export default Experience;

@@ -51,3 +51,962 @@
 body {
   font-family: "Inter", sans-serif;
 }
+
+/* =========================
+   MARQUEE
+========================= */
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.marquee:active {
+  cursor: grabbing;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: velocityScroll 38s linear infinite;
+  padding-inline: 1rem;
+}
+
+.marquee:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+/* =========================
+   SMOOTH SCROLL
+========================= */
+
+@keyframes velocityScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================
+   ANIMATED BORDER
+========================= */
+
+@keyframes borderSpin {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.animate-borderSpin {
+  background-size: 200% 200%;
+  animation: borderSpin 5s linear infinite;
+}
+
+/* =========================
+   FLOATING PARTICLES
+========================= */
+
+.particles::before,
+.particles::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px);
+
+  background-size: 80px 80px;
+
+  animation: particlesMove 25s linear infinite;
+}
+
+.particles::after {
+  animation-duration: 40s;
+  opacity: 0.5;
+}
+
+@keyframes particlesMove {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-80px);
+  }
+}
+
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+
+@media (max-width: 768px) {
+  .marquee-content {
+    animation-duration: 25s;
+    gap: 1rem;
+  }
+}
+
+/* =========================
+   REACT
+========================= */
+
+.reactIcon {
+  animation: reactSpin 3s linear infinite;
+}
+
+.reactIcon:hover {
+  animation-play-state: paused;
+}
+
+@keyframes reactSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   NODE
+========================= */
+
+.nodeIcon {
+  animation: nodeBounce 3s ease-in-out infinite;
+}
+
+@keyframes nodeBounce {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* =========================
+   JAVASCRIPT
+========================= */
+
+.jsIcon {
+  animation: jsTilt 3s ease-in-out infinite;
+}
+
+@keyframes jsTilt {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+/* =========================
+   HTML
+========================= */
+
+.htmlIcon {
+  animation: htmlFloat 3s ease-in-out infinite;
+}
+
+@keyframes htmlFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* =========================
+   CSS
+========================= */
+
+.cssIcon {
+  animation: cssWave 3s ease-in-out infinite;
+}
+
+@keyframes cssWave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(15deg);
+  }
+}
+
+/* =========================
+   DATABASE
+========================= */
+
+.dbIcon {
+  animation: dbPulse 3s ease-in-out infinite;
+}
+
+@keyframes dbPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.18);
+    opacity: 0.8;
+  }
+}
+
+/* =========================
+   STAGGER EFFECT
+========================= */
+
+.reactIcon {
+  animation-delay: 0s;
+}
+
+.nodeIcon {
+  animation-delay: 0.2s;
+}
+
+.jsIcon {
+  animation-delay: 0.4s;
+}
+
+.htmlIcon {
+  animation-delay: 0.6s;
+}
+
+.cssIcon {
+  animation-delay: 0.8s;
+}
+
+.dbIcon {
+  animation-delay: 1s;
+}
+
+/* =========================
+   CALL BUTTON
+========================= */
+
+.mobileActionBtn {
+  animation: floatCall 3s ease-in-out infinite;
+}
+
+@keyframes floatCall {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* =========================
+   EMAIL BUTTON
+========================= */
+
+.mobileActionBtn2 {
+  animation: pulseMail 2.8s ease-in-out infinite;
+}
+
+@keyframes pulseMail {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+/* =========================
+   MOBILE PREMIUM TOUCH
+========================= */
+
+@media (max-width: 640px) {
+  .mobileActionBtn,
+  .mobileActionBtn2 {
+    backdrop-filter: blur(20px);
+  }
+}
+
+/* =========================
+   HERO NAME
+========================= */
+
+.heroName {
+  text-shadow:
+    0 0 10px rgba(34, 211, 238, 0.5),
+    0 0 25px rgba(34, 211, 238, 0.25);
+
+  animation: heroFloat 4s ease-in-out infinite;
+}
+
+/* =========================
+   FLOATING EFFECT
+========================= */
+
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* =========================
+   GLOW PULSE
+========================= */
+
+.nameGlow {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px rgba(34,211,238,0.4));
+  }
+
+  50% {
+    opacity: 0.9;
+    filter: drop-shadow(0 0 18px rgba(34,211,238,0.8));
+  }
+}
+
+
+/* =========================
+   LETTER ANIMATION
+========================= */
+
+.heroLetter {
+  display: inline-block;
+
+  animation: letterBounce 1.8s ease-in-out infinite;
+
+}
+
+/* =========================
+   BOUNCING EFFECT
+========================= */
+
+@keyframes letterBounce {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0px);
+    opacity: 0.7;
+  }
+
+  40% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .heroLetter {
+    animation-duration: 2s;
+  }
+}
+
+/* =========================
+   MODAL POP
+========================= */
+
+@keyframes modalPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-modalPop {
+  animation: modalPop 0.4s ease;
+}
+
+/* SKILLS AND ABILITIES */
+.techIcon {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.7);
+
+  color: #06b6d4;
+
+  backdrop-filter: blur(20px);
+
+  transition: all 0.3s ease;
+}
+
+.techIcon:hover {
+  transform: translateY(-4px) scale(1.08);
+
+  background: linear-gradient(
+    135deg,
+    rgba(34,211,238,0.15),
+    rgba(168,85,247,0.15)
+  );
+
+  color: #0891b2;
+}
+
+
+/* GRAPHIC DESIGN */
+
+/* =========================
+   BACKGROUND STROKES
+========================= */
+
+.paintBgStroke {
+  position: absolute;
+
+  border-radius: 999px;
+
+  filter: blur(8px);
+
+  opacity: 0.18;
+}
+
+/* CYAN */
+.paintBgStroke1 {
+  top: 40px;
+  left: -120px;
+
+  width: 420px;
+  height: 80px;
+
+  background: linear-gradient(
+    90deg,
+    #06b6d4,
+    #3b82f6
+  );
+
+  transform: rotate(-12deg);
+
+  animation: floatStroke1 8s ease-in-out infinite;
+}
+
+/* PURPLE */
+.paintBgStroke2 {
+  bottom: 80px;
+  right: -100px;
+
+  width: 380px;
+  height: 70px;
+
+  background: linear-gradient(
+    90deg,
+    #8b5cf6,
+    #ec4899
+  );
+
+  transform: rotate(15deg);
+
+  animation: floatStroke2 10s ease-in-out infinite;
+}
+
+/* GREEN */
+.paintBgStroke3 {
+  bottom: -20px;
+  left: 20%;
+
+  width: 320px;
+  height: 60px;
+
+  background: linear-gradient(
+    90deg,
+    #22c55e,
+    #06b6d4
+  );
+
+  transform: rotate(-8deg);
+
+  animation: floatStroke3 12s ease-in-out infinite;
+}
+
+/* =========================
+   FLOAT ANIMATIONS
+========================= */
+
+@keyframes floatStroke1 {
+  0%,
+  100% {
+    transform:
+      translateY(0px)
+      rotate(-12deg);
+  }
+
+  50% {
+    transform:
+      translateY(-12px)
+      rotate(-9deg);
+  }
+}
+
+@keyframes floatStroke2 {
+  0%,
+  100% {
+    transform:
+      translateY(0px)
+      rotate(15deg);
+  }
+
+  50% {
+    transform:
+      translateY(10px)
+      rotate(18deg);
+  }
+}
+
+@keyframes floatStroke3 {
+  0%,
+  100% {
+    transform:
+      translateY(0px)
+      rotate(-8deg);
+  }
+
+  50% {
+    transform:
+      translateY(-8px)
+      rotate(-5deg);
+  }
+}
+
+/* =========================
+   BRUSH
+========================= */
+
+.paintBrush {
+  position: absolute;
+
+  top: 30%;
+  left: -120px;
+
+  display: flex;
+  align-items: center;
+
+  transform: rotate(-18deg);
+
+  opacity: 0.25;
+
+  animation: brushMove 10s ease-in-out infinite;
+}
+
+.brushHandle {
+  width: 180px;
+  height: 12px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    to right,
+    #8b5a2b,
+    #c68642
+  );
+}
+
+.brushMetal {
+  width: 24px;
+  height: 22px;
+
+  background: linear-gradient(
+    to bottom,
+    #d1d5db,
+    #9ca3af
+  );
+}
+
+.brushHead {
+  width: 36px;
+  height: 30px;
+
+  border-radius: 0 0 12px 12px;
+
+  background: linear-gradient(
+    to bottom,
+    #06b6d4,
+    #9333ea
+  );
+}
+
+@keyframes brushMove {
+  0% {
+    transform:
+      translateX(0px)
+      translateY(0px)
+      rotate(-18deg);
+  }
+
+  50% {
+    transform:
+      translateX(700px)
+      translateY(40px)
+      rotate(-8deg);
+  }
+
+  100% {
+    transform:
+      translateX(0px)
+      translateY(0px)
+      rotate(-18deg);
+  }
+}
+
+/* =========================================
+   EXPERIENCE SECTION ANIMATIONS
+========================================= */
+
+/* FLOATING MAIN CARDS */
+
+.experienceCard {
+  animation: experienceFloat 6s ease-in-out infinite;
+}
+
+@keyframes experienceFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* STAGGER FLOAT */
+
+.experienceCard:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.experienceCard:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.experienceCard:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+/* =========================================
+   LEFT ACCENT GLOW
+========================================= */
+
+.experienceAccent {
+  position: relative;
+  overflow: hidden;
+}
+
+.experienceAccent::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    #22d3ee,
+    #3b82f6,
+    #a855f7
+  );
+
+  animation: accentFlow 4s linear infinite;
+}
+
+@keyframes accentFlow {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* =========================================
+   ICON PULSE
+========================================= */
+
+.experienceIcon {
+  animation: iconPulse 3s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(34,211,238,0.2);
+  }
+
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(34,211,238,0.35);
+  }
+}
+
+/* =========================================
+   RESPONSIBILITY CARDS
+========================================= */
+
+.responsibilityCard {
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.responsibilityCard:hover {
+  transform:
+    translateY(-5px)
+    scale(1.02);
+}
+
+/* =========================================
+   CHECK ICON BOUNCE
+========================================= */
+
+.checkIcon {
+  animation: checkBounce 2.5s ease-in-out infinite;
+}
+
+@keyframes checkBounce {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* =========================================
+   PERIOD BADGE GLOW
+========================================= */
+
+.periodBadge {
+  animation: badgeGlow 4s ease-in-out infinite;
+}
+
+@keyframes badgeGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 rgba(34,211,238,0),
+      0 0 0 rgba(59,130,246,0);
+  }
+
+  50% {
+    box-shadow:
+      0 0 25px rgba(34,211,238,0.12),
+      0 0 40px rgba(59,130,246,0.08);
+  }
+}
+
+/* =========================================
+   HEADER ICON ROTATION
+========================================= */
+
+.heroBriefcase {
+  animation: briefcaseSpin 10s linear infinite;
+}
+
+.heroBriefcase:hover {
+  animation-play-state: paused;
+}
+
+@keyframes briefcaseSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+   BACKGROUND GRID MOTION
+========================================= */
+
+.movingGrid {
+  animation: gridMove 30s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  100% {
+    transform: translate(40px, 40px);
+  }
+}
+
+/* =========================================
+   MOBILE OPTIMIZATION
+========================================= */
+
+@media (max-width: 768px) {
+
+  .experienceCard {
+    animation: none;
+  }
+
+  .heroBriefcase {
+    animation-duration: 14s;
+  }
+
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================
+   FOOTER BACKGROUND GLOWS
+========================= */
+
+/* =========================
+   GLOW ANIMATION
+========================= */
+
+.footer-glow-left {
+  animation: floatGlowLeft 10s ease-in-out infinite;
+}
+
+.footer-glow-right {
+  animation: floatGlowRight 12s ease-in-out infinite;
+}
+
+@keyframes floatGlowLeft {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  50% { transform: translate(40px,30px) scale(1.1); }
+}
+
+@keyframes floatGlowRight {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  50% { transform: translate(-40px,-30px) scale(1.15); }
+}
+
+/* =========================
+   GRID MOVE
+========================= */
+
+.footer-grid {
+  animation: gridMove 25s linear infinite;
+}
+
+@keyframes gridMove {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(40px,40px); }
+}
+
+/* =========================
+   FADE UP ANIMATION
+========================= */
+
+.footer-animate {
+  animation: fadeUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.footer-animate:nth-child(1) { animation-delay: 0.2s; }
+.footer-animate:nth-child(2) { animation-delay: 0.4s; }
+.footer-animate:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   ICONS
+========================= */
+
+.footer-icon {
+  transition: all 0.3s ease;
+}
+
+.footer-icon:hover {
+  transform: translateY(-4px) scale(1.2);
+  filter: drop-shadow(0 0 10px rgba(34,211,238,0.6));
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.footer-link {
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 1px;
+  background: #22d3ee;
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}

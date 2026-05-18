@@ -1,165 +1,169 @@
 import React from "react";
-import {
-  FiBriefcase,
-  FiMonitor,
-  FiCode,
-  FiServer,
-  FiMail,  FiUsers,
-  FiBookOpen,
-  FiMic,
-} from "react-icons/fi";
-
-import {
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-  FaWhatsapp,
-} from "react-icons/fa";
-import { CodeXmlIcon } from "lucide-react";
+import { FiBriefcase, FiCode, FiMail, FiMonitor, FiServer } from "react-icons/fi";
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-white/10 bg-[#06053d] py-12 text-gray-400">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+    <footer className="relative w-full bg-[#06053d] text-gray-300 overflow-hidden flex items-center justify-center">
 
-        {/* BRAND */}
-        <div>
-          <h3 className="font-orbitron text-white text-2xl mb-3">
-            Manyika
-            <span className="text-blue-400">.dev</span>
-          </h3>
+      {/* GLOWS */}
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-cyan-500/20 blur-[140px] rounded-full footer-glow-left" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-500/20 blur-[140px] rounded-full footer-glow-right" />
 
-          <p className="text-sm leading-relaxed text-gray-400 text-justify ">
-            I am a software developer focused on building scalable digital experiences,
-            modern web applications, and impactful user-centered solutions.
-          </p>
+      {/* GRID */}
+      <div className="
+        footer-grid
+        absolute inset-0 opacity-[0.04]
+        bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)]
+        bg-[size:40px_40px]
+      " />
 
-          <div className="mt-5 space-y-1 text-sm font-mono">
+      {/* CONTENT */}
+      <div className="relative z-10 w-full max-w-6xl p-6 md:p-10">
 
-            <p>
-              Status:
-              <span className="text-green-400 ml-1">
-                Available for Work.
-              </span>
+        <div className="grid md:grid-cols-3 gap-9">
+
+          {/* MANYIKA.DEV */}
+          <div className="footer-animate space-y-2">
+
+            {/* BRAND */}
+            <div className="relative">
+
+              <h2 className="text-xl md:text-4xl font-orbitron text-white tracking-wide">
+
+                <span className="relative inline-block">
+                  Manyika.
+                </span>
+                <span className="text-cyan-400 ml-1 animate-pulse">
+                  dev
+                </span>
+
+              </h2>
+
+              {/* STATUS DOT */}
+              <div className="flex items-center gap-2 mt-2">
+
+                <span className="relative flex h-2.5 w-2.5">
+
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+
+                </span>
+
+                <p className="text-green-400 text-xs tracking-wide">
+                  Available for opportunities.
+                </p>
+
+              </div>
+
+            </div>
+
+            {/* DESCRIPTION */}
+            <p className="
+              text-gray-400
+              text-sm md:text-base
+              leading-relaxed
+              text-justify
+              max-w-md
+            ">
+              Software Developer focused on building scalable systems,
+              modern web applications, and creative digital experiences.
+              I turn ideas into fast, clean and interactive products.
             </p>
 
-            <p>
-              Location:
-              <span className="ml-1">
-                Lusaka, Zambia.
-              </span>
-            </p>
+          </div>
 
-            <p>
+          {/* EXPERIENCE */}
+          <div className="footer-animate">
 
-              Engineer:
-              <span className="ml-1">
-                Manyika Munyinda. 
-              </span>
-            </p>
+            <h3 className="text-cyan-400 font-semibold font-orbitron uppercase mb-3 tracking-wider">
+              Work Experience
+            </h3>
+
+            <ul className="space-y-4 text-sm">
+
+              <li className="flex items-start gap-3 group">
+                <span className="text-cyan-400 mt-1 group-hover:scale-110 transition">
+                  <FiCode />
+                </span>
+                <div>
+                  <p className="text-white font-medium">Frontend Developer</p>
+                  <p className="text-gray-400 text-xs">
+                    Typescript, React, Tailwind, CSS Animation.
+                  </p>
+                </div>
+              </li>
+
+              <li className="flex items-start gap-3 group">
+                <span className="text-purple-400 mt-1 group-hover:scale-110 transition">
+                  <FiServer />
+                </span>
+                <div>
+                  <p className="text-white font-medium">Backend Development</p>
+                  <p className="text-gray-400 text-xs">
+                    Node.js, Express, JWT, APIs, MySQL.
+                  </p>
+                </div>
+              </li>
+
+              <li className="flex items-start gap-3 group">
+                <span className="text-green-400 mt-1 group-hover:scale-110 transition">
+                  <FiMonitor />
+                </span>
+                <div>
+                  <p className="text-white font-medium">IT Support & Systems</p>
+                  <p className="text-gray-400 text-xs">
+                    Networking, troubleshooting, school systems.
+                  </p>
+                </div>
+              </li>
+
+              <li className="flex items-start gap-3 group">
+                <span className="text-pink-400 mt-1 group-hover:scale-110 transition">
+                  <FiBriefcase />
+                </span>
+                <div>
+                  <p className="text-white font-medium">Freelance Projects</p>
+                  <p className="text-gray-400 text-xs">
+                    Web apps, branding, and digital solutions.
+                  </p>
+                </div>
+              </li>
+
+            </ul>
 
           </div>
 
-        </div>
+          {/* CONNECT */}
+          <div className="footer-animate">
 
-        {/* EXPERIENCE */}
-        <div>
+            <h3 className="text-cyan-400 font-semibold font-orbitron uppercase mb-3 tracking-wider">
+              let's Connect
+            </h3>
 
-          <h3 className="font-orbitron text-blue-400 mb-4">
-            Experience
-          </h3>
+            {/* SOCIAL GRID */}
+            <div className="grid grid-cols-2 gap-4 text-sm md:grid-cols-1">
 
-          <div className="space-y-3 font-mono">
+              <a href="#" className="flex items-center gap-3 footer-link hover:text-cyan-400">
+                <FaGithub className="text-lg" />
+                <span>GitHub</span>
+              </a>
 
-            <div className="flex items-center gap-2 hover:text-white transition">
-              <FiBriefcase className="text-blue-400" />
-              <span>Software Development</span>
-            </div>
+              <a href="https://linkedin.com/in/muyinda-manyika" className="flex items-center gap-3 footer-link hover:text-cyan-400">
+                <FaLinkedin className="text-lg text-blue-400" />
+                <span>LinkedIn</span>
+              </a>
 
-            <div className="flex items-center gap-2 hover:text-white transition">
-              <FiMonitor className="text-blue-400" />
-              <span>UI/UX Design Systems</span>
-            </div>
+              <a href="https://instagram.com/manyika_canohn" className="flex items-center gap-3 footer-link hover:text-cyan-400">
+                <FaInstagram className="text-lg text-pink-400" />
+                <span>Instagram</span>
+              </a>
 
-            <div className="flex items-center gap-2 hover:text-white transition">
-              <FiCode className="text-blue-400" />
-              <span>Frontend Engineering</span>
-            </div>
-
-            <div className="flex items-center gap-2 hover:text-white transition">
-              <FiServer className="text-blue-400" />
-              <span>Backend Development</span>
-            </div>
-
-            <div className="flex items-center gap-2 hover:text-white transition">
-              <CodeXmlIcon className="text-blue-400" />
-              <span>Full Stack Software Developer</span>
-            </div>
-
-          </div>
-
-        </div>
-
-        {/* REFERENCES */}
-        <div>
-
-        <h3 className="font-orbitron text-blue-400 mb-4 flex items-center gap-2">
-          References
-        </h3>
-
-          <div className="space-y-5 text-sm font-mono">
-
-            <div className="flex items-start gap-3">
-
-              <div className="mt-1 text-blue-400">
-                <FiBookOpen />
-              </div>
-
-              <div>
-                <p className="text-white">
-                  SHUPA AMBULAYA
-                </p>
-
-                <p className="text-gray-400">
-                  School Manager
-                </p>
-              </div>
-
-            </div>
-
-            <div className="flex items-start gap-3">
-
-              <div className="mt-1 text-blue-400">
-                <FiUsers />
-              </div>
-
-              <div>
-                <p className="text-white">
-                  INESS KAMUDOLE
-                </p>
-
-                <p className="text-gray-400">
-                  Youth Leader
-                </p>
-              </div>
-
-            </div>
-
-            <div className="flex items-start gap-3">
-
-              <div className="mt-1 text-blue-400">
-                <FiMic />
-              </div>
-
-              <div>
-                <p className="text-white">
-                  ZAINS DUBE
-                </p>
-
-                <p className="text-gray-400">
-                  Media Director
-                </p>
-              </div>
+              <a href="https://wa.me/+260774283579" className="flex items-center gap-3 footer-link hover:text-cyan-400">
+                <FaWhatsapp className="text-lg text-green-400" />
+                <span>WhatsApp</span>
+              </a>
 
             </div>
 
@@ -167,70 +171,7 @@ const Footer = () => {
 
         </div>
 
-        {/* CONTACT */}
-        <div>
 
-          <h3 className="font-orbitron text-blue-400 mb-4">
-            Connect
-          </h3>
-
-          <div className="space-y-3 font-mono">
-
-            <a
-              href="mailto:manyikamunyinda4@gmail.com"
-              className="flex items-center gap-2 hover:text-white transition"
-            >
-              <FiMail className="text-blue-400" />
-              <span>Email</span>
-            </a>
-
-            <a
-              href="mailto:manyikamunyinda4@gmail.com"
-              className="flex items-center gap-2 hover:text-white transition"
-            >
-              <FaWhatsapp className="text-blue-400" />
-              <span>WhatsApp</span>
-            </a>
-
-            <a
-              href="https://github.com/ManyikaCanohn"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 hover:text-white transition"
-            >
-              <FaGithub className="text-blue-400" />
-              <span>GitHub</span>
-            </a>
-
-            <a
-              href="https://linkedin.com/in/manyika-munyinda-4a9b1a1b3"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 hover:text-white transition"
-            >
-              <FaLinkedin className="text-blue-400" />
-              <span>LinkedIn</span>
-            </a>
-
-            <a
-              href="https://twitter.com/manyika_munyinda"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 hover:text-white transition"
-            >
-              <FaTwitter className="text-blue-400" />
-              <span>Twitter</span>
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      {/* BOTTOM */}
-      <div className="border-t border-white/10 mt-10 pt-3 text-center text-sm text-gray-500 font-mono">
-        © {new Date().getFullYear()} Manyika Munyinda. All rights reserved.
       </div>
     </footer>
   );
